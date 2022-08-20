@@ -7,7 +7,7 @@ on:
     types: [ "published" ]
     
 env:
-  PROJECT_PATH: 'SpawnCloud.Services.Authentication.Client/SpawnCloud.Services.Authentication.Client.csproj'
+  PROJECT_PATH: 'SpawnCloud.Authentication.Client/SpawnCloud.Authentication.Client.csproj'
   OUTPUT_PATH: ${{ github.workspace }}/output
   NUGET_SOURCE_URL: 'https://api.nuget.org/v3/index.json'
   
