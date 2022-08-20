@@ -1,6 +1,6 @@
 ﻿{
   "profiles": {
-    "SpawnCloud.Services.Authentication": {
+    "SpawnCloud.Authentication": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": false,

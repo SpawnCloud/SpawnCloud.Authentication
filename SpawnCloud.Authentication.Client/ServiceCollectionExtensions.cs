@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using OpenIddict.Validation.AspNetCore;
 
 namespace SpawnCloud.Authentication.Client;
 
@@ -10,6 +11,7 @@ public static class ServiceCollectionExtensions
         services.AddOpenIddict()
             .AddValidation(options =>
             {
+                // TODO: Allow configuration
                 options.SetIssuer("https://localhost:7287");
                 
                 options.AddEncryptionKey(new SymmetricSecurityKey(
@@ -19,6 +21,7 @@ public static class ServiceCollectionExtensions
                 
                 options.UseAspNetCore();
             });
+        services.AddAuthentication(OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme);
 
         return services;
     }
