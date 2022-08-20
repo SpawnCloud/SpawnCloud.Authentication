@@ -1,0 +1,41 @@
+name: Publish Client Package
+
+on:
+  push:
+    branches: [ "main" ]
+  release:
+    types: [ "published" ]
+    
+env:
+  PROJECT_PATH: 'SpawnCloud.Services.Authentication.Client/SpawnCloud.Services.Authentication.Client.csproj'
+  OUTPUT_PATH: ${{ github.workspace }}/output
+  NUGET_SOURCE_URL: 'https://api.nuget.org/v3/index.json'
+  
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 6.0.x
+    
+    - name: Restore dependencies
+      run: dotnet restore ${{ env.PROJECT_PATH }}
+    
+    - name: Build
+      run: dotnet build ${{ env.PROJECT_PATH }} --no-restore --configuration Release
+    
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+      
+    - name: Pack
+      run: dotnet pack ${{ env.PROJECT_PATH }} --no-restore --no-build --configuration Release --output ${{ env.OUTPUT_PATH }}
+      
+    - name: Push
+      run: dotnet nuget push ${{ env.OUTPUT_PATH }}/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s ${{ env.NUGET_SOURCE_URL }} --no-symbols

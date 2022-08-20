@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpawnCloud.Authentication", "SpawnCloud.Authentication\SpawnCloud.Authentication.csproj", "{AC88C144-3CD0-4663-854D-D39049754CC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpawnCloud.Authentication.DataAccess", "SpawnCloud.Authentication.DataAccess\SpawnCloud.Authentication.DataAccess.csproj", "{43F2FE14-927B-4EA9-AA1A-8758FB207931}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpawnCloud.Authentication.DataAccess.PostgreSQL", "SpawnCloud.Authentication.DataAccess.PostgreSQL\SpawnCloud.Authentication.DataAccess.PostgreSQL.csproj", "{4EA0E3D6-F180-4CDF-A24A-A20EA3606590}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpawnCloud.Authentication.DataAccess.SQLite", "SpawnCloud.Authentication.DataAccess.SQLite\SpawnCloud.Authentication.DataAccess.SQLite.csproj", "{824BC4D5-1E0F-41FA-9729-43A770E7777C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpawnCloud.Authentication.Client", "SpawnCloud.Authentication.Client\SpawnCloud.Authentication.Client.csproj", "{48F93B25-B8F2-4651-BF53-952AE1D3973C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC88C144-3CD0-4663-854D-D39049754CC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC88C144-3CD0-4663-854D-D39049754CC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC88C144-3CD0-4663-854D-D39049754CC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC88C144-3CD0-4663-854D-D39049754CC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43F2FE14-927B-4EA9-AA1A-8758FB207931}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43F2FE14-927B-4EA9-AA1A-8758FB207931}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43F2FE14-927B-4EA9-AA1A-8758FB207931}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43F2FE14-927B-4EA9-AA1A-8758FB207931}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EA0E3D6-F180-4CDF-A24A-A20EA3606590}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EA0E3D6-F180-4CDF-A24A-A20EA3606590}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EA0E3D6-F180-4CDF-A24A-A20EA3606590}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EA0E3D6-F180-4CDF-A24A-A20EA3606590}.Release|Any CPU.Build.0 = Release|Any CPU
+		{824BC4D5-1E0F-41FA-9729-43A770E7777C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{824BC4D5-1E0F-41FA-9729-43A770E7777C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{824BC4D5-1E0F-41FA-9729-43A770E7777C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{824BC4D5-1E0F-41FA-9729-43A770E7777C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48F93B25-B8F2-4651-BF53-952AE1D3973C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48F93B25-B8F2-4651-BF53-952AE1D3973C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48F93B25-B8F2-4651-BF53-952AE1D3973C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48F93B25-B8F2-4651-BF53-952AE1D3973C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
