@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Tokens;
 using OpenIddict.Abstractions;
 using OpenIddict.Server;
@@ -80,6 +81,13 @@ builder.Services.AddScoped<IAuthenticationManager, AuthenticationManager>();
 
 
 var app = builder.Build();
+if (app.Environment.IsDevelopment())
+{
+    IdentityModelEventSource.ShowPII = true;
+    app.UseDeveloperExceptionPage();
+}
+
+app.UseHttpsRedirection();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthentication();

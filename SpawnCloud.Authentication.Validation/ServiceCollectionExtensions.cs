@@ -2,11 +2,11 @@
 using Microsoft.IdentityModel.Tokens;
 using OpenIddict.Validation.AspNetCore;
 
-namespace SpawnCloud.Authentication.Client;
+namespace SpawnCloud.Authentication.Validation;
 
 public static class ServiceCollectionExtensions
 {
-    public static IServiceCollection AddSpawnCloudAuthClient(this IServiceCollection services)
+    public static IServiceCollection AddSpawnCloudAuthValidation(this IServiceCollection services)
     {
         services.AddOpenIddict()
             .AddValidation(options =>

@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpawnCloud.Authentication.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpawnCloud.Authentication.DataAccess.SQLite", "SpawnCloud.Authentication.DataAccess.SQLite\SpawnCloud.Authentication.DataAccess.SQLite.csproj", "{824BC4D5-1E0F-41FA-9729-43A770E7777C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpawnCloud.Authentication.Client", "SpawnCloud.Authentication.Client\SpawnCloud.Authentication.Client.csproj", "{48F93B25-B8F2-4651-BF53-952AE1D3973C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpawnCloud.Authentication.Validation", "SpawnCloud.Authentication.Validation\SpawnCloud.Authentication.Validation.csproj", "{48F93B25-B8F2-4651-BF53-952AE1D3973C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
