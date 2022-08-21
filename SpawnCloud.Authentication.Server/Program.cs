@@ -50,11 +50,17 @@ builder.Services.AddOpenIddict()
         // TODO: Require client id
         options.AcceptAnonymousClients();
 
-        // TODO: https://documentation.openiddict.com/configuration/encryption-and-signing-credentials.html#registering-a-certificate-recommended-for-production-ready-scenarios
-        options.AddDevelopmentSigningCertificate();
-        
-        options.AddEncryptionKey(new SymmetricSecurityKey(
-            Convert.FromBase64String("DRjd/GnduI3Efzen9V9BvbNUfc/VKgXltV7Kbk9sMkY=")));
+        if (builder.Environment.IsDevelopment())
+        {
+            options.AddDevelopmentSigningCertificate();
+            options.AddEncryptionKey(new SymmetricSecurityKey(
+                Convert.FromBase64String("DRjd/GnduI3Efzen9V9BvbNUfc/VKgXltV7Kbk9sMkY=")));
+        }
+        else
+        {
+            // TODO: https://documentation.openiddict.com/configuration/encryption-and-signing-credentials.html#registering-a-certificate-recommended-for-production-ready-scenarios
+            throw new NotImplementedException();
+        }
 
         options.UseAspNetCore()
             .EnableTokenEndpointPassthrough();
