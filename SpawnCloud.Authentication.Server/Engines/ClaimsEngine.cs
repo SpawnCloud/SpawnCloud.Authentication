@@ -1,7 +1,7 @@
 ﻿using System.Security.Claims;
 using OpenIddict.Abstractions;
 
-namespace SpawnCloud.Authentication.Engines;
+namespace SpawnCloud.Authentication.Server.Engines;
 
 public class ClaimsEngine : IClaimsEngine
 {

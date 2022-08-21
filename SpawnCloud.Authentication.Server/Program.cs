@@ -4,12 +4,12 @@ using OpenIddict.Abstractions;
 using OpenIddict.Server;
 using SpawnCloud.Authentication.DataAccess;
 using SpawnCloud.Authentication.DataAccess.Entities;
-using SpawnCloud.Authentication.Engines;
-using SpawnCloud.Authentication.Managers;
-using SpawnCloud.Authentication.Utilities;
+using SpawnCloud.Authentication.Server.Engines;
+using SpawnCloud.Authentication.Server.Managers;
+using SpawnCloud.Authentication.Server.Utilities;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Configuration.AddEnvironmentVariables("AUTH_");
+builder.Configuration.AddEnvironmentVariables("SPAWNCLOUD_AUTH_");
 
 builder.Services.AddIdentityCore<User>(options =>
     {
@@ -87,4 +87,6 @@ app.UseEndpoints(options =>
 {
     options.MapControllers();
 });
+
+app.UseSpawnCloudDataAccess();
 app.Run();

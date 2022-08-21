@@ -1,4 +1,4 @@
-﻿namespace SpawnCloud.Authentication.Models;
+﻿namespace SpawnCloud.Authentication.Server.Models;
 
 public class LoginOptions
 {

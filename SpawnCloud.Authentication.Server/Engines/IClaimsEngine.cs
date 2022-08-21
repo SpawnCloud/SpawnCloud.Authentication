@@ -1,6 +1,6 @@
 ﻿using System.Security.Claims;
 
-namespace SpawnCloud.Authentication.Engines;
+namespace SpawnCloud.Authentication.Server.Engines;
 
 public interface IClaimsEngine
 {

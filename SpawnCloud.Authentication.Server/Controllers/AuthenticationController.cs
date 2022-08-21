@@ -3,10 +3,10 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using OpenIddict.Abstractions;
 using OpenIddict.Server.AspNetCore;
-using SpawnCloud.Authentication.Managers;
-using SpawnCloud.Authentication.Models;
+using SpawnCloud.Authentication.Server.Managers;
+using SpawnCloud.Authentication.Server.Models;
 
-namespace SpawnCloud.Authentication.Controllers;
+namespace SpawnCloud.Authentication.Server.Controllers;
 
 [ApiController]
 [ApiExplorerSettings(IgnoreApi = true)]

@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Authentication;
 using OpenIddict.Server.AspNetCore;
 
-namespace SpawnCloud.Authentication.Models;
+namespace SpawnCloud.Authentication.Server.Models;
 
 public record AuthenticationResponse
 {

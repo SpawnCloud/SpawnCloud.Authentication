@@ -2,7 +2,7 @@
 WORKDIR /src
 COPY [".", "./"]
 
-RUN dotnet publish "SpawnCloud.Services.Authentication/SpawnCloud.Services.Authentication.csproj" -c Release -o /app/publish \
+RUN dotnet publish "SpawnCloud.Services.Authentication.Server/SpawnCloud.Services.Authentication.Server.csproj" -c Release -o /app/publish \
     --runtime alpine-x64 \
     --self-contained true \
     /warnaserror
@@ -19,4 +19,4 @@ USER dotnetuser
 WORKDIR /app
 EXPOSE 5000
 COPY --from=publish /app/publish .
-ENTRYPOINT ["./SpawnCloud.Services.Authentication", "--urls", "http://localhost:5000"]
+ENTRYPOINT ["./SpawnCloud.Services.Authentication.Server", "--urls", "http://localhost:5000"]

@@ -1,8 +1,8 @@
 ﻿using System.Security.Claims;
 using OpenIddict.Abstractions;
-using SpawnCloud.Authentication.Models;
+using SpawnCloud.Authentication.Server.Models;
 
-namespace SpawnCloud.Authentication.Managers;
+namespace SpawnCloud.Authentication.Server.Managers;
 
 public interface IAuthenticationManager
 {

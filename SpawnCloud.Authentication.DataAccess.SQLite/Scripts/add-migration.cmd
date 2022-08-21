@@ -6,6 +6,6 @@ IF "%MigrationName%" == "" (
 
 cd ../../
 
-SET AUTH_DatabaseProvider=SQLITE
+SET SPAWNCLOUD_AUTH_DatabaseProvider=SQLITE
 
-dotnet ef migrations add --project SpawnCloud.Services.Authentication.DataAccess.SQLite\SpawnCloud.Services.Authentication.DataAccess.SQLite.csproj --startup-project SpawnCloud.Services.Authentication\SpawnCloud.Services.Authentication.csproj --context SpawnCloud.Services.Authentication.DataAccess.SQLite.SqliteAuthDbContext --configuration Debug "%MigrationName%" --output-dir Migrations
+dotnet ef migrations add --project SpawnCloud.Authentication.DataAccess.SQLite\SpawnCloud.Authentication.DataAccess.SQLite.csproj --startup-project SpawnCloud.Authentication\SpawnCloud.Authentication.csproj --context SpawnCloud.Authentication.DataAccess.SQLite.SqliteAuthDbContext --configuration Debug "%MigrationName%" --output-dir Migrations

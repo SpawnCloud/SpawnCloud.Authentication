@@ -3,11 +3,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using OpenIddict.Abstractions;
 using OpenIddict.Server.AspNetCore;
-using SpawnCloud.Authentication.Engines;
-using SpawnCloud.Authentication.Models;
 using SpawnCloud.Authentication.DataAccess.Entities;
+using SpawnCloud.Authentication.Server.Engines;
+using SpawnCloud.Authentication.Server.Models;
 
-namespace SpawnCloud.Authentication.Managers;
+namespace SpawnCloud.Authentication.Server.Managers;
 
 public class AuthenticationManager : IAuthenticationManager
 {

@@ -1,4 +1,4 @@
-﻿namespace SpawnCloud.Authentication;
+﻿namespace SpawnCloud.Authentication.Server;
 
 public static class Constants
 {

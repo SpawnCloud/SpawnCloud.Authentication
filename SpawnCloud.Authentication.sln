@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpawnCloud.Authentication", "SpawnCloud.Authentication\SpawnCloud.Authentication.csproj", "{AC88C144-3CD0-4663-854D-D39049754CC5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpawnCloud.Authentication.Server", "SpawnCloud.Authentication.Server\SpawnCloud.Authentication.Server.csproj", "{AC88C144-3CD0-4663-854D-D39049754CC5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpawnCloud.Authentication.DataAccess", "SpawnCloud.Authentication.DataAccess\SpawnCloud.Authentication.DataAccess.csproj", "{43F2FE14-927B-4EA9-AA1A-8758FB207931}"
 EndProject

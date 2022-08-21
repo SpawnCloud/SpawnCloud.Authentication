@@ -2,7 +2,7 @@
 using SpawnCloud.Authentication.DataAccess.ServiceBuilder;
 using SpawnCloud.Authentication.DataAccess.SQLite;
 
-namespace SpawnCloud.Authentication.Utilities;
+namespace SpawnCloud.Authentication.Server.Utilities;
 
 public static class DataAccessServiceBuilderExtensions
 {
