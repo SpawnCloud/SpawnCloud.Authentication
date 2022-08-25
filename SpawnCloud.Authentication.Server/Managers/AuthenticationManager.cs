@@ -62,19 +62,11 @@ public class AuthenticationManager : IAuthenticationManager
                 errorDescription,
                 OpenIddictServerAspNetCoreDefaults.AuthenticationScheme);
         }
-        
+
         // Create the claims-based identity that will be used by OpenIddict to generate tokens.
         var identity = await _signInManager.CreateUserPrincipalAsync(user);
-
-        // Set the list of scopes granted to the client application.
-        identity.SetScopes(new[]
-        {
-            OpenIddictConstants.Permissions.Scopes.Email,
-            OpenIddictConstants.Permissions.Scopes.Profile,
-            OpenIddictConstants.Permissions.Scopes.Roles,
-            OpenIddictConstants.Scopes.OfflineAccess
-        }.Intersect(request.GetScopes()));
-
+        
+        identity.SetScopes(GetGrantedScopes(identity, request.GetScopes()));
         identity.SetDestinations(_claimsEngine.GetDestinations);
 
         return AuthenticationResponse.Success(new ClaimsPrincipal(identity), OpenIddictServerAspNetCoreDefaults.AuthenticationScheme);
@@ -102,5 +94,38 @@ public class AuthenticationManager : IAuthenticationManager
         principal.SetDestinations(_claimsEngine.GetDestinations);
         
         return AuthenticationResponse.Success(principal, OpenIddictServerAspNetCoreDefaults.AuthenticationScheme);
+    }
+
+    private static IEnumerable<string> GetGrantedScopes(ClaimsPrincipal identity, IEnumerable<string> requestedScopes)
+    {
+        OpenIddictRequest request;
+        // Set the list of scopes granted to the client application.
+        // Intersection of scopes from identity, application, and request
+        var userAllowedScopes = identity.GetClaims("scope")
+            .Select(s => s.Split(' ', StringSplitOptions.RemoveEmptyEntries))
+            .SelectMany(s => s)
+            .Concat(new[]
+            {
+                // Offline access scope is always allowed at the user level
+                OpenIddictConstants.Scopes.OfflineAccess,
+            })
+            .ToArray();
+
+        // Remove the scope claim added by Identity Framework because OpenIddict will maintain it
+        identity.RemoveClaims("scope");
+
+        // TODO: Include scopes from application
+        var appAllowedScopes = requestedScopes;
+
+        // All scopes allowed by both the app and the user/roles
+        var allowedScopes = appAllowedScopes.Intersect(userAllowedScopes).Concat(new[]
+        {
+            // Scopes that are always allowed
+            OpenIddictConstants.Permissions.Scopes.Email,
+            OpenIddictConstants.Permissions.Scopes.Profile,
+            OpenIddictConstants.Permissions.Scopes.Roles
+        });
+
+        return allowedScopes.Intersect(requestedScopes);
     }
 }
